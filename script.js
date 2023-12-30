@@ -1,6 +1,14 @@
 const input = document.querySelector("input");
 const btn = document.querySelector(".addTask > button");
 
+input.addEventListener("focus", () => {
+    document.body.style.zoom = "100%";
+});
+
+input.addEventListener("blur", () => {
+    document.body.style.zoom = null;
+});
+
 btn.addEventListener("click", addList);
 input.addEventListener("keyup", (e) => e.keyCode === 13 && addList(e));
 
